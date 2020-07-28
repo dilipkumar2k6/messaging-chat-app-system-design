@@ -14,6 +14,20 @@
 - Active connected user: 500 million
 - Each user sends 40 messages daily
 - Expected service response: 100ms
+### Whatsapp Statistics
+- 2 billion users
+- One billion daily active users
+- India is the biggest WhatsApp market in the world, with 200 million users
+- 120 million WhatsApp users in Brazil
+- US WhatsApp market relatively small, at 23 million
+- 65 billion WhatsApp messages sent per day, or 29 million per minute
+- Two billion minutes spent making WhatsApp voice and video calls per day
+- 55 million WhatsApp video calls made per day, lasting 340 million minutes in total
+- 85 billion hours of WhatsApp usage measured May-July 2018
+- WhatsApp acquired by Facebook for $19 billion in 2014
+![](https://1z1euk35x7oy36s8we4dr6lo-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/WhatsApp-Facebook-users.png)
+![](https://1z1euk35x7oy36s8we4dr6lo-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/2019-social-media-users-by-platform.jpg)
+
 # Step 2:
 ## a. Bucketize functional requirements into micro services
 - User service
