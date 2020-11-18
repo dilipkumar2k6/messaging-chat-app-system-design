@@ -95,6 +95,7 @@ It will update heartbeatTime in `connections` table in database
 ```
 Note: Same micro services will be used for `init` and `heartbeat` api
 ![](https://systeminterview.com/imgs/ch12/12-5.png)
+![](https://systeminterview.com/imgs/ch12/12-6.png)
 ## API to create conversation between user1 and user2
 ```
 POST /conversation
