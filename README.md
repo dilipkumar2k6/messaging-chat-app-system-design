@@ -178,11 +178,6 @@ How to resolve client side message order issue?
 - We need to keep a sequence number with every message for each client. 
 - This sequence number will determine the exact ordering of messages for EACH user. 
 - With this solution, both clients will see a different view of the message sequence, but this view will be consistent for them on all devices.
-
-
-
-
-
 ### Storage estimate
 - Daily active users: 500 million
 - Each user sends 40 messages daily
