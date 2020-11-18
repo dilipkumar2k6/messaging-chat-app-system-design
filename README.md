@@ -59,12 +59,9 @@ Following is schema to store created connection in `connections` table in databa
 - index on userId and serverId
 - Size of document: 12 bytes + 4 * 20bytes + 8 bytes = 100 bytes
 - Total size per day: 500 m * 100 bytes = 50GB
-- Storage limit per server: 1TB
-- Number of shard: 1
-- Number of replicas: 3
-- shardKey userId
-- Total storage: 3TB
-- CAP? AP system
+### App Cache layer
+- Total size per day: 50GB
+- Use distributed in memory cache to store all data in cache
 ### Network bandwidth estimate
 - Size of input payload: 4 bytes
 - Size of response document: 24 bytes
@@ -77,9 +74,6 @@ Following is schema to store created connection in `connections` table in databa
 - Concurrent connections supported by a server: 1000
 - Number of servers: 500k
 - Number of connections per second: 5787 per sec ~ 6K per second
-### App Cache layer
-- Total size per day: 50GB
-- Use distributed in memory cache to store all data in cache
 
 ## API to heartbeat webscoket connection
 ```
@@ -124,12 +118,10 @@ Following is schema to store created conversation in `conversations` table in da
 - index on user1 and user2
 - Size of document: 32 bytes + 4 * 20bytes + 2 * 4 bytes = 120 bytes
 - Total size per day: 500 m * 120 bytes = 60GB
-- Storage limit per server: 1TB
-- Number of shard: 1
-- Number of replicas: 3
-- shardKey conversationId
-- Total storage: 3TB
-- CAP? AP system
+### App Cache layer
+- Total size per day: 60GB
+- Use distributed in memory cache to store all data in cache
+
 ### Network bandwidth estimate
 - Size of input payload: 68 bytes ~ 70 bytes
 - Size of response document: 24 bytes ~ 25 bytes
@@ -184,13 +176,17 @@ How to resolve client side message order issue?
 - Number of messages daily: 20 billion
 - index on fromUserId and toUserId
 - Size of document: 132 bytes + 7 * 20bytes + 2 * 4 bytes = 280 bytes ~ 300 bytes
-- Total size per day: 500 m * 300 bytes = 150GB
+- Total size per day: 20 b * 300 bytes = 6Tb
+- 5 years chat history:  10,950tb ~ 11Pb  
 - Storage limit per server: 1TB
-- Number of shard: 1
+- Number of shard: 11000
 - Number of replicas: 3
 - shardKey messageId
-- Total storage: 3TB
+- Total storage: 18TB
 - CAP? AP system
+### Message Queue Storage
+- Total size per day: 20 b * 300 bytes = 6Tb
+- In 7 days: 42TB
 ### Network bandwidth estimate
 - Size of input payload: 128 bytes ~ 130 bytes
 - Size of response document: 24 bytes ~ 25 bytes
