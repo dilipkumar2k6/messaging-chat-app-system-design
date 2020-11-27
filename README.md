@@ -232,14 +232,16 @@ POST /conversation/<conversationId>/message/<messageId>/delivery?apiKey=string
     ```
     {
         userId: 'user1', // primary key
-        heartbeatTime: '2020-11-18T15:36:21.117Z'
+        heartbeatTime: '2020-11-18T15:36:21.117Z',
+        serverId: 'server1'
     }   
     ```
     - At this moment, when user1 is not sending data to server, they will heartbeat to each other using `/heartbeat` api which will keep updating `connections` table
     ```
     {
         userId: 'user1', // primary key
-        heartbeatTime: '2020-11-18T15:36:21.117Z'
+        heartbeatTime: '2020-11-18T15:36:21.117Z',
+        serverId: 'server1'
     }   
     ```    
     - This way server knows that user1 is still there
@@ -249,14 +251,16 @@ POST /conversation/<conversationId>/message/<messageId>/delivery?apiKey=string
     ```
     {
         userId: 'user2', // primary key
-        heartbeatTime: '2020-11-18T11:36:21.117Z'
+        heartbeatTime: '2020-11-18T11:36:21.117Z',
+        serverId: 'server2'
     }   
     ```
     - At this moment, when user2 is not sending data to server, they will heartbeat to each other using `/heartbeat` api which will keep updating `connections` table
     ```
     {
         userId: 'user2', // primary key
-        heartbeatTime: '2020-11-18T12:36:21.117Z'
+        heartbeatTime: '2020-11-18T12:36:21.117Z',
+        serverId: 'server2'
     }   
     ``` 
     - This way server knows that user2 is still there
